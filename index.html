@@ -70,17 +70,38 @@ htm_tag{font-family:"jameel-noori-nastaleeq";font-size:45px;text-transform:none;
                 <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Menu</a>
+                <a class="nav-link" href="#menuNigga">Menu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#aboutNigga">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Book Table</a>
+                <a class="nav-link" href="#bookNigga">Book Table</a>
               </li>
             </ul>
             <div class="user_option">
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const links = document.querySelectorAll('nav a');
 
+  links.forEach(link => {
+    link.addEventListener('click', smoothScroll);
+  });
+
+  function smoothScroll(e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+
+    window.scrollTo({
+      top: targetElement.offsetTop,
+      behavior: 'smooth'
+    });
+  }
+});
+
+</script>
               <a href="" class="order_online">
                 Order Online
               </a>
@@ -322,9 +343,7 @@ htm_tag{font-family:"jameel-noori-nastaleeq";font-size:45px;text-transform:none;
     </div>
   </section>
 
-  <!-- end offer section -->
-
-  <!-- food section -->
+<div id="menuNigga">
 
   <section class="food_section layout_padding-bottom">
     <div class="container">
@@ -1031,8 +1050,8 @@ htm_tag{font-family:"jameel-noori-nastaleeq";font-size:45px;text-transform:none;
       </div>
     </div>
   </section>
-
-
+</div>
+<div id="aboutNigga">
   <section class="about_section layout_padding">
     <div class="container  ">
 
@@ -1064,8 +1083,8 @@ Quality is our recipe. That’s our secret to make sure that anytime is the best
       </div>
     </div>
   </section>
-
-
+</div>
+<div id="bookNigga">
   <section class="book_section layout_padding">
     <div class="container">
       <div class="heading_container">
@@ -1128,7 +1147,7 @@ Quality is our recipe. That’s our secret to make sure that anytime is the best
       </div>
     </div>
   </section>
-
+</div>
 
 
   <footer class="footer_section">
